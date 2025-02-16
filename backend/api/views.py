@@ -12,14 +12,19 @@ class CarList(APIView):
         start_date = request.query_params.get("startDate")
         end_date = request.query_params.get("endDate")
         cars = Car.objects.all()
+
+        # If both dates are provided, perform an availability check using booking_start and booking_end.
         if start_date and end_date:
             data = []
             for car in cars:
-                available = not car.bookings.filter(
-                    booking_date__gte=start_date, booking_date__lte=end_date
+                # A booking overlaps if its start is before the requested end and its end is after the requested start.
+                is_booked = car.bookings.filter(
+                    booking_start__lt=end_date,
+                    booking_end__gt=start_date
                 ).exists()
                 car_data = CarSerializer(car).data
-                car_data["available"] = available
+                # Mark available as True if no overlapping booking is found.
+                car_data["available"] = not is_booked
                 data.append(car_data)
             return Response(data)
         else:

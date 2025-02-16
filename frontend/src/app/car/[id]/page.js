@@ -51,6 +51,37 @@ export default async function CarDetail({ params }) {
                   Price per day:{" "}
                   <span className="text-blue-500 font-bold">${car.price}</span>
                 </p>
+                {/* New: Car specifications icons */}
+                <div className="flex flex-wrap gap-6 mt-4">
+                  {/* Transmission */}
+                  <div className="flex items-center gap-2">
+                    <span role="img" aria-label="Transmission">
+                      {car.transmission === "Manual" ? "⚙️" : "🔄"}
+                    </span>
+                    <span>{car.transmission}</span>
+                  </div>
+                  {/* Seats */}
+                  <div className="flex items-center gap-2">
+                    <span role="img" aria-label="Seats">💺</span>
+                    <span>{car.seats} Seat{car.seats > 1 ? "s" : ""}</span>
+                  </div>
+                  {/* Baggages */}
+                  <div className="flex items-center gap-2">
+                    <span role="img" aria-label="Baggages">🧳</span>
+                    <span>{car.baggages} Baggage{car.baggages > 1 ? "s" : ""}</span>
+                  </div>
+                  {/* Doors */}
+                  <div className="flex items-center gap-2">
+                    <span role="img" aria-label="Doors">🚪</span>
+                    <span>{car.doors} Door{car.doors > 1 ? "s" : ""}</span>
+                  </div>
+                  {/* Fuel */}
+                  <div className="flex items-center gap-2">
+                    <span role="img" aria-label="Fuel">⛽</span>
+                    <span>{car.fuel}</span>
+                  </div>
+                </div>
+                {/* End of Car specifications icons */}
                 {/* Add any additional car details or a short description here */}
               </div>
             </div>

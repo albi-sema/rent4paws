@@ -6,9 +6,9 @@ export default function BackButton() {
   return (
     <button
       onClick={() => router.back()}
-      className="mb-4 bg-gray-200 px-4 py-2 rounded"
+      className="mb-4 bg-blue-200 px-4 py-4 text-blue-500 font-bold rounded-full"
     >
-      Back
+      Back to Car Selection
     </button>
   );
 } 
