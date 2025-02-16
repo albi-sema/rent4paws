@@ -1,0 +1,50 @@
+# =====================
+# Python / Django Backend
+# =====================
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+__pycache__/
+
+# Django specific files
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+env/
+venv/
+ENV/
+.env*
+staticfiles/
+media/
+
+# Distribution / packaging
+build/
+dist/
+
+# =====================
+# Node.js / Next.js Frontend
+# =====================
+node_modules/
+.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Optional: caches and local configs
+.cache/
+*.local
+
+# =====================
+# OS Generated Files
+# =====================
+.DS_Store
+Thumbs.db 
